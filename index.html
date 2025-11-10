@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TripGenie - AI Travel Planner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Merriweather', 'serif'], // Swapping sans for serif as primary requested font
+              serif: ['Playfair Display', 'serif'],
+              display: ['Playfair Display', 'serif'],
+            },
+            colors: {
+              brand: {
+                light: "#F0E491", // Pale Yellow
+                olive: "#BBC863", // Light Olive
+                moss: "#658C58",  // Moss Green
+                deep: "#31694E",  // Deep Green
+              },
+              border: "hsl(var(--border))",
+              input: "hsl(var(--input))",
+              ring: "#658C58",
+              background: "#FDFCF5", // Very light cream
+              foreground: "#1a2e22",
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar { width: 8px; height: 8px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: #BBC863; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #658C58; }
+      
+      body {
+        font-family: 'Merriweather', serif;
+        background-color: #FDFCF5;
+        color: #31694E;
+      }
+      
+      .font-display {
+        font-family: 'Playfair Display', serif;
+      }
+
+      /* Print Styles for PDF generation */
+      @media print {
+        .no-print { display: none !important; }
+        .print-only { display: block !important; }
+        body { background: white; color: black; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.553.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.4.0",
+    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.5"
+  }
+}
+</script>
+</head>
+  <body class="bg-[#FDFCF5] text-[#31694E] antialiased min-h-screen selection:bg-[#F0E491] selection:text-[#31694E]">
+    <div id="root"></div>
+  </body>
+</html>

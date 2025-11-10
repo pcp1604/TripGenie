@@ -1,0 +1,7 @@
+{
+  "name": "TripGenie - AI Travel Planner",
+  "description": "A production-ready AI travel agent using Gemini 2.5 to generate detailed itineraries, estimates, and booking options.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
