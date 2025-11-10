@@ -10,8 +10,6 @@ import { INITIAL_PROJECTS } from './constants';
 // Pages
 import LandingPage from './pages/LandingPage';
 import PlannerPage from './pages/PlannerPage';
-import Dashboard from './pages/Dashboard';
-import ProjectWorkspace from './pages/ProjectWorkspace';
 
 // Context for global state (Key)
 export interface AppContextType {
@@ -37,7 +35,6 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Plan Trip', path: '/planner', icon: Compass },
-    { name: 'Dashboard', path: '/dashboard', icon: Compass },
   ];
 
   return (
@@ -107,10 +104,6 @@ const App = () => {
   const [tempKey, setTempKey] = useState('');
   const [projects, setProjects] = useState<Project[]>(INITIAL_PROJECTS);
 
-  const addProject = (project: Project) => {
-    setProjects([...projects, project]);
-  };
-
   useEffect(() => {
     const key = localStorage.getItem('tripgenie_api_key');
     if (key) {
@@ -130,6 +123,10 @@ const App = () => {
     }
   };
 
+  const addProject = (project: Project) => {
+    setProjects([...projects, project]);
+  };
+
   return (
     <AppContext.Provider value={{ 
       isApiKeySet: apiKeySet, 
@@ -144,8 +141,6 @@ const App = () => {
             <Routes>
               <Route path="/" element={<LandingPage />} />
               <Route path="/planner" element={<PlannerPage />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/project/:id/*" element={<ProjectWorkspace />} />
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </main>

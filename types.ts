@@ -1,4 +1,5 @@
 
+
 export interface UserPreferences {
   currency: string;
   homeAirport: string;
@@ -95,19 +96,11 @@ export interface MustVisitPlace {
   tip: string;
 }
 
-// Chat Interfaces
-export interface Message {
-  id: string;
-  role: 'user' | 'model' | 'system';
-  content: string;
-  timestamp: number;
-  relatedItineraryId?: string;
-}
+// --- StratAI / Project Management Types ---
 
-// Project & User Interfaces
 export enum UserRole {
   CONSULTANT = 'Consultant',
-  MANAGER = 'Manager',
+  CLIENT = 'Client',
   ADMIN = 'Admin'
 }
 
@@ -124,7 +117,7 @@ export interface Project {
   id: string;
   title: string;
   client: string;
-  status: 'Active' | 'Completed' | 'Planning' | 'Review' | 'Archived';
+  status: string;
   dueDate: string;
   progress: number;
   description: string;
@@ -133,8 +126,7 @@ export interface Project {
 
 export enum MessageRole {
   USER = 'user',
-  MODEL = 'model',
-  SYSTEM = 'system'
+  MODEL = 'model'
 }
 
 export interface ChatMessage {
